@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <Title>Register</Title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <h2 style="text-align:center; background-color:wheat">Register</h2>
+        <form action="register" method="post" style="background-color: rgb(206, 89, 108);" class="form-horizontal">
+            {% csrf_token %}
+            <label for = "username">User Name : </label>
+            <input type="text" name = "username" placeholder="Enter Your Username"><br>
+            <Label for="first_name">First Name : </label>
+            <input type="text" name = "first_name" placeholder="Enter Your First Name"><br>
+            <label for="last_name">Last Name : </label>
+            <input type="text" name = "last_name" placeholder="Enter Your Last NameU"><br>
+            <label for="Email">Email Address : </label>
+            <input type="email" name = "email" placeholder="Enter Your Email"><br>
+            <label for="password">Password : </label>
+            <input type="password" name = "password" placeholder="Enter Your Password"><br>
+            <label for="Confirm Password">Confirm Password : </label>
+            <input type="password" name = "password2" placeholder="Confirm Password"><br>
+            <input type="submit">
+        </div>
+        </form>
+{% for i in messages %}
+<h3>{{i}}</h3>
+{% endfor %}
+        </div>
+    </body>
+</html>
